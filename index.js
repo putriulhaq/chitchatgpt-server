@@ -10,7 +10,7 @@ const port = 8000
 
 const configuration = new Configuration({
     organization: "org-ZJ6NazewT89EQ81IjoEf5ppD",
-    apiKey:  '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',
+    apiKey:'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',
 });
 
 const openai = new OpenAIApi(configuration);
