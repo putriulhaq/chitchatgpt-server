@@ -20,10 +20,7 @@ const openai = new OpenAIApi(configuration);
 //   prompt: "what is your name?",
 // }).then((res) => {console.log(res.data.choices[0].text)});;
 app.use(bodyParser.json())
-app.use(cors({
-    origin:'*',
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}))
+app.use(cors())
 
 app.get("/", async (Req, res) => {
     res.send("haiiii")
