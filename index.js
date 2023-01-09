@@ -20,9 +20,12 @@ const openai = new OpenAIApi(configuration);
 //   prompt: "what is your name?",
 // }).then((res) => {console.log(res.data.choices[0].text)});;
 app.use(bodyParser.json())
-// app.use(cors({
-//     origin:'*'
-// }))
+app.use(bodyParser.urlencoded({
+    extended: true
+ }));
+app.use(cors({
+    origin:'*'
+}))
 
 // app.use((req, res, next)=>{
 //     res.header("Access-Control-Allow-Origin", "")
