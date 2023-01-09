@@ -21,7 +21,8 @@ const openai = new OpenAIApi(configuration);
 // }).then((res) => {console.log(res.data.choices[0].text)});;
 app.use(bodyParser.json())
 app.use(cors({
-    origin:'*'
+    origin:'*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }))
 
 app.get("/", async (Req, res) => {
