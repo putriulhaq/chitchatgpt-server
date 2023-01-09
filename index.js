@@ -22,6 +22,10 @@ const openai = new OpenAIApi(configuration);
 app.use(bodyParser.json())
 app.use(cors())
 
+app.get("/", async (Req, res) => {
+    res.send("haiiii")
+})
+
 app.post("/translate", async (req, res) => {
   const {message} = req.body;
   const response = await openai.createCompletion({
