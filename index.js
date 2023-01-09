@@ -19,30 +19,30 @@ const openai = new OpenAIApi(configuration);
 //   model: "text-davinci-003",
 //   prompt: "what is your name?",
 // }).then((res) => {console.log(res.data.choices[0].text)});;
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
  }));
-app.use(cors())
 
-// app.use((req, res, next)=>{
-//     res.header("Access-Control-Allow-Origin", "")
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, X-Requested-With, Content-Type, Accept, Authorization, secret"
-//     )
+app.use((req, res, next)=>{
+    res.header("Access-Control-Allow-Origin", "")
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization, secret"
+    )
     
-//     if(req.method === "OPTIONS"){
-//         res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE")
-//         return res.status(200).json({})
-//     }
+    if(req.method === "OPTIONS"){
+        res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE")
+        return res.status(200).json({})
+    }
     
-//     if (req.method === 'POST' || req.method === 'PUT') {
-//         req.body = escapeObject(req.body)
-//     }
+    if (req.method === 'POST' || req.method === 'PUT') {
+        req.body = escapeObject(req.body)
+    }
     
-//     next()
-// })
+    next()
+})
 
 app.get("/", async (Req, res) => {
     res.send("haiiii")
