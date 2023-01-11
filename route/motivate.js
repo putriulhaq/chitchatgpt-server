@@ -6,7 +6,7 @@ const configurationOPENAI = require("../library/openai");
 
 const cors = require("cors");
 
-app.use(cors({
+Motivate.use(cors({
     origin:"*"
 }))
 
