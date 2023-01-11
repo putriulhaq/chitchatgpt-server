@@ -4,6 +4,12 @@ const Translate = express.Router();
 require("dotenv").config();
 const configurationOPENAI = require("../library/openai");
 
+const cors = require("cors");
+
+app.use(cors({
+    origin:"*"
+}));
+
 const prompt = `pretend you a translator and you can translate indonesian to english languange with good grammar content.
 Ulhaq: what do you want to say with indonesia language?`
 

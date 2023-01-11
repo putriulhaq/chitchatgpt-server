@@ -13,6 +13,9 @@ const Motivate = require("./route/motivate");
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("hai")
+})
 
 app.use('/api', Translate)
 app.use('/api', Motivate)
