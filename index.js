@@ -7,7 +7,7 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const port = 8000;
-const Translate = require('./route/Translate');
+const Translate = require('./route/translate');
 const Motivate = require("./route/motivate");
 
 app.use(bodyParser.json());
